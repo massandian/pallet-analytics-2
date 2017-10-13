@@ -5,9 +5,12 @@
 // Authors: Rocco Pietrini <rocco.pietrini@grottinilab.com>
 //
 
-
+#include <fstream>
 #include "process.h"
 #include "setup.h"
+#include "camera.h"
+
+using namespace openni;
 
 
 Process::Process(QObject *parent) : QObject(parent)
@@ -107,5 +110,11 @@ void Process::readJson()
 }
 void Process::FrameImageReady(cv::Mat FrameImage)
 {
+            cv::circle(FrameImage, cv::Point(125,91), 5, cv::Scalar(255, 0, 0), -1);
+            cv::circle(FrameImage, cv::Point(161,90), 5, cv::Scalar(255, 0, 0), -1);
+            cv::circle(FrameImage, cv::Point(197,91), 5, cv::Scalar(255, 0, 0), -1);
+            cv::circle(FrameImage, cv::Point(124,128), 5, cv::Scalar(255, 0, 0), -1);
+            cv::circle(FrameImage, cv::Point(162,127), 5, cv::Scalar(255, 0, 0), -1);
+            cv::circle(FrameImage, cv::Point(198,127), 5, cv::Scalar(255, 0, 0), -1);
     cv::imshow("bgr", FrameImage);
 }
